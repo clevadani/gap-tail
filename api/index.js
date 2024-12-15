@@ -1,6 +1,12 @@
 const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
+
+app.use(morgan('combined'));
+app.use(cors());
 
 app.use(express.static('public'));
 
